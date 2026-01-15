@@ -6,5 +6,8 @@ fun main(){
 //    test.getYears(60)
     val test: Task = Task("Test","Test",true, Priority.HIGH)
     test.copy("Test","Test",true,Priority.LOW)
-
+    val testD : DevelopmentDepartment = DevelopmentDepartment()
+    val testT : TestingDepartment = TestingDepartment()
+    testD.printDepartmentGoal()
+    testT.printDepartmentGoal()
 }
