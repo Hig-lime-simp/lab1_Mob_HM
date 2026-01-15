@@ -1,19 +1,24 @@
 abstract class Department(
     open val departmentName: String
 ) {
-    abstract fun printDepartmentGoal()
+    abstract fun printDepartmentGoal(): String
 }
 
-class DevelopmentDepartment : Department("Development")
+class DevelopmentDepartment : Department("Development"),ReportGenerator
 {
-    override fun printDepartmentGoal() {
-        println("Писать чистый код")
+    override fun printDepartmentGoal() : String {
+        return "Писать чистый код"
+    }
+
+    override fun generateReport(): String {
+        return "Мы $departmentName !" +
+                " И наша цель - ${printDepartmentGoal()}"
     }
 }
 
 class TestingDepartment : Department("Testing")
 {
-    override fun printDepartmentGoal() {
-        println("Находить все баги")
+    override fun printDepartmentGoal() : String {
+        return "Находить все баги"
     }
 }
