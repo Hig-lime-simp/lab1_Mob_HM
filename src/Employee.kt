@@ -1,10 +1,7 @@
 class Employee() {
     private var fullName: String = "Иван Иванонов Иванович"
-        get() = field
     private var position: String = "Стажер"
-        get() = field
     private var salary: Int = 0
-        get() = field
         set(value) {
             if (value <= 0){
                 println("Error, pls enter not negative ")
@@ -12,7 +9,19 @@ class Employee() {
             }
         }
     private var yearsOfExperience: Int = 0
-        get() = field
-
-
+        set(value) {
+            field = (value.coerceIn(0, 50))
+        }
+    fun getName(name: String){
+        fullName = name
+    }
+    fun getPosition(poz: String){
+        position = poz
+    }
+    fun getSalary(sal: Int){
+        salary = sal
+    }
+    fun getYears(years: Int){
+        yearsOfExperience = years
+    }
 }
