@@ -1,9 +1,10 @@
+enum class Priority {
+    LOW, MEDIUM, HIGH
+}
+
 data class Task(
     var title: String = "",
     var description: String = "",
-    var isCompleted: Boolean = false
-){
-    enum class priority {
-        low, medium, high
-    }
-}
+    var isCompleted: Boolean = false,
+    var priority: Priority = Priority.LOW
+)
